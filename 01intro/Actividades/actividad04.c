@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+#include<float.h>
+
+int main(){
+	float   pi,x,y,max,area;
+	int     i, cuenta;
+
+	srand(125490);
+	max = RAND_MAX*1.0;
+	pi = 3.14159;
+	cuenta = 0;
+
+  	for(i=1; i<=20000; i++){
+     		x=(rand()/max) * (2*pi);
+     		y=(rand()/max);
+
+		if(y < pow(sin(x), 2)){
+			cuenta++;
+		}
+ 
+ 	}
+
+	area = 2*pi*(cuenta/20000.);
+
+	//printf("El numero de puntos debajo de la curva es: %d", cuenta);
+	printf ("cuenta: %d , area: %f\n",cuenta,area);
+
+	return 0;
+
+}
